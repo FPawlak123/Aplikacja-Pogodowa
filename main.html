@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aplikacja Pogodwa</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon4.png">
+</head>
+<body>
+
+<div class="weather-wrapper">
+
+    <!-- DZISIAJ -->
+    <div class="weather-card">
+        <h2>Dzisiaj</h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NOC -->
+    <div class="weather-card dark">
+        <h2>Noc</h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather-card search">
+        <h3 class="city"></h3>
+        <h3 class="marginTop">Sprawdź pogode w dowolnym mieście</h3>
+
+        <div class="top-section">
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label"><input type="text" class="inputBox" placeholder="Wyszukaj Miasto" id="cityId"></div>
+            </div>
+            <div><button class="btn" onclick="CheckWeatherCity()">Sprawdź</button></div>
+        </div>
+    </div>
+</div>
+
+<!-- DODATKOWY BOX POD POGODĄ -->
+<div class="bottombox">
+
+       <div class="weather-card dark">
+        <h2 id="nextDay"></h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather-card">
+        <h2 id="next2Day"></h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="weather-card dark">
+        <h2 id="next3Day"></h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="weather-card">  
+        <h2 id="next4Day"></h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+<div class="weather-card dark">
+        <h2 id="next5Day"></h2>
+
+        <div class="top-section">
+
+            <div>
+                <div class="temp"></div>
+            </div>
+        </div>
+
+        <div class="params">
+            <div class="param-row">
+                <div class="label">Wiatr</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Porywy</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Kierunek Wiatru</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Chmury </div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Ciśnienie</div>
+                <div class="value"></div>
+            </div>
+            <div class="param-row">
+                <div class="label">Wilgotność</div>
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
