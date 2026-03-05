@@ -8,7 +8,7 @@ return;
 }
 
 let apiUrl =`https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=pl&q=${city}&`;
-let apiKey = "f53b0851e6e176a36b61fd0292d62963";
+let apiKey = "INSERT YOUR API KEY HERE";
 
 
 async function Weather(){
@@ -292,3 +292,4 @@ console.log(data2);
 }
 WeatherWeek()
 }
+
