@@ -2,14 +2,25 @@ function CheckWeatherCity(){
 let city = document.getElementById("cityId").value;
 
 
+if(city.trim() === ""){
+alert("Type City name");
+return;
+}
+
 let apiUrl =`https://api.openweathermap.org/data/2.5/weather?&units=metric&lang=pl&q=${city}&`;
-let apiKey = "INSERT YOUR API KEY HERE";
+let apiKey = "f53b0851e6e176a36b61fd0292d62963";
 
 
 async function Weather(){
 
 const response = await fetch (apiUrl + `appid=${apiKey}`);
 let data = await response.json();
+
+if(data.cod == "404"){
+alert(" Error 404: \n City not found");
+return;
+}
+
 
 document.querySelectorAll(".city")[0].innerHTML = data.name;
 
@@ -101,11 +112,6 @@ if(kierunek6 >= 330 && kierunek6 <= 20){
 document.querySelectorAll(".value")[9].innerHTML = data2.list[7].weather[0].description;
 document.querySelectorAll(".value")[10].innerHTML = data2.list[7].main.pressure+" hPa";
 document.querySelectorAll(".value")[11].innerHTML = data2.list[7].main.humidity+"%";
-
-
-
-
-
 
 
 
